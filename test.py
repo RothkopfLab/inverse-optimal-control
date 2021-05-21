@@ -1,7 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+import jax.numpy as jnp
+from jax import vmap
+
 from ioc.examples.reaching import ReachingProblem
+from ioc.methods.infer import ApproximateInferenceFactory
 from ioc.methods.solvers import TodorovSOC
 
 if __name__ == '__main__':
@@ -46,4 +50,18 @@ if __name__ == '__main__':
     plt.xlabel('time step')
     plt.ylabel('acceleration')
 
+    plt.show()
+
+    ll = lambda r: ApproximateInferenceFactory.create(ReachingProblem(r=r, T=T)).log_likelihood(XSim,
+                                                                                                max_iter=max_iter)
+
+    rs = jnp.linspace(-7, -3)
+    lls = vmap(ll)(rs)
+
+    plt.figure()
+    plt.plot(rs, lls)
+    plt.axvline(r_true, label="true rx", color="C1")
+    plt.axvline(rs[lls.argmax()], label="inferred rx", color="C2")
+    plt.xlabel("rx")
+    plt.legend()
     plt.show()
