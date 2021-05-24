@@ -6,6 +6,7 @@ from jax import vmap
 
 from ioc.examples.reaching import ReachingProblem
 from ioc.methods.infer import ApproximateInferenceFactory
+from ioc.methods.mle import max_likelihood
 from ioc.methods.solvers import TodorovSOC
 
 if __name__ == '__main__':
@@ -52,16 +53,22 @@ if __name__ == '__main__':
 
     plt.show()
 
-    ll = lambda r: ApproximateInferenceFactory.create(ReachingProblem(r=r, T=T)).log_likelihood(XSim,
-                                                                                                max_iter=max_iter)
+    # define vectorized log-likelihood function
+    ll = vmap(lambda r: ApproximateInferenceFactory.create(ReachingProblem(r=r, T=T)).log_likelihood(XSim))
 
-    rs = jnp.linspace(-7, -3)
-    lls = vmap(ll)(rs)
+    # maximum likelihood estimation
+    res = max_likelihood(ReachingProblem, XSim, x0=dict(r=-3., v=-1., f=-1.), method="bobyqa")
 
     plt.figure()
-    plt.plot(rs, lls)
-    plt.axvline(r_true, label="true rx", color="C1")
-    plt.axvline(rs[lls.argmax()], label="inferred rx", color="C2")
-    plt.xlabel("rx")
+
+    # plot likelihood for a range of values
+    rs = jnp.linspace(-7, -3)
+    plt.plot(rs, ll(rs))
+
+    # plot true and inferred
+    plt.axvline(r_true, label="True", color="C1")
+    plt.axvline(res.x["r"], label="MLE", color="C2")
+    plt.xlabel("r")
+    plt.ylabel("Log likelihood")
     plt.legend()
     plt.show()
