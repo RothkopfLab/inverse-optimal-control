@@ -5,7 +5,7 @@ import jax.numpy as jnp
 from ioc.methods.infer import ApproximateInferenceFactory
 from ioc.methods.solvers import TodorovSOC
 from ioc.methods.mle import max_likelihood
-from ioc.examples.random_problems import create_random_problem
+from ioc.examples import create_random_problem
 
 # generate a new random problem class
 seed = 1
