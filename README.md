@@ -3,7 +3,7 @@
 Installation:
 
 ```bash
-cd inverse-optimal control
+cd inverse-optimal-control
 python -m venv env
 source env/bin/activate
 python -m pip install -r requirements.txt
