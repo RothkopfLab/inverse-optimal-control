@@ -2,7 +2,7 @@
 
 This repository contains code for the paper
 
-Schultheis, M., Straub, D., & Rothkopf, C. A. (2021). Inverse Optimal Control Adapted to the Noise Characteristics of the Human Sensorimotor System. Advances in Neural Information Processing Systems 35 (2021).
+Schultheis, M., Straub, D., & Rothkopf, C. A. (2021). Inverse Optimal Control Adapted to the Noise Characteristics of the Human Sensorimotor System. 35th Conference on Neural Information Processing Systems (NeurIPS 2021), Sydney, Australia.
 
 Installation:
 
