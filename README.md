@@ -1,6 +1,6 @@
 # Inverse Optimal Control Adapted to the Noise Characteristics of the Human Sensorimotor System
 
-![agent_environment010](https://user-images.githubusercontent.com/23743923/136335662-8f99ddb8-0875-4da6-b2e3-5750731cfb5a.png)
+![agent_environment010](https://user-images.githubusercontent.com/23743923/136335919-64f8a3cc-078e-4d82-aaad-5a90035c942b.png)
 
 This repository contains code for the paper
 
