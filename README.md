@@ -22,6 +22,3 @@ python random_example.py
 python belief_tracking.py
 python eye_example.py
 ```
-
-## Results
-
