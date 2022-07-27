@@ -22,3 +22,17 @@ python random_example.py
 python belief_tracking.py
 python eye_example.py
 ```
+
+## Citation
+If you use our method in your research, please cite our paper:
+
+```
+@article{schultheis2021inverse,
+  title={Inverse optimal control adapted to the noise characteristics of the human sensorimotor system},
+  author={Schultheis, Matthias and Straub, Dominik and Rothkopf, Constantin A},
+  journal={Advances in Neural Information Processing Systems},
+  volume={34},
+  pages={9429--9442},
+  year={2021}
+}
+```
