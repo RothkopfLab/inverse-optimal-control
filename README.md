@@ -27,10 +27,11 @@ python eye_example.py
 If you use our method in your research, please cite our paper:
 
 ```
-@article{schultheis2021inverse,
+@inproceedings{schultheis2021inverse,
   title={Inverse optimal control adapted to the noise characteristics of the human sensorimotor system},
   author={Schultheis, Matthias and Straub, Dominik and Rothkopf, Constantin A},
-  journal={Advances in Neural Information Processing Systems},
+  booktitle={Advances in Neural Information Processing Systems},
+  publisher={Curran Associates, Inc.},
   volume={34},
   pages={9429--9442},
   year={2021}
